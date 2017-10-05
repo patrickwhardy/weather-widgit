@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './WeatherWidgit.css'
 
 class WeatherWidgit extends Component {
@@ -10,3 +11,8 @@ class WeatherWidgit extends Component {
 }
 
 export default WeatherWidgit
+
+WeatherWidgit.propTypes = {
+  high: PropTypes.number.isRequired,
+  low: PropTypes.number.isRequired
+};
