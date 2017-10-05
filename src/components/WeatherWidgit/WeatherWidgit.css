@@ -1,0 +1,16 @@
+.outer-circle {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.inner-circle {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  background-color: tan;
+  margin: 0 auto;
+}

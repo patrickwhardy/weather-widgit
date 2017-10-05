@@ -4,7 +4,11 @@ import './WeatherWidgit.css'
 const WeatherWidgit = ({ high, low, wind, precip, humidity, icon }) => {
   console.log(high, low, wind, precip, humidity, icon)
   return (
-    <p>{high}</p>
+    <div className="outer-circle">
+      <p>{high}</p>
+      <div className="inner-circle">
+      </div>
+    </div>
   )
 }
 
