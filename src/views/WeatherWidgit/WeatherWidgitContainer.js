@@ -14,18 +14,21 @@ class WeatherWidgitContainer extends Component {
   }
 
   render () {
-    const high = parseInt(SampleResponse.daily.data[0].temperatureMax)
-    const low = parseInt(SampleResponse.daily.data[0].temperatureMin)
-    const wind = parseInt(SampleResponse.daily.data[0].windSpeed)
-    const precip = parseInt(SampleResponse.daily.data[0].precipProbability * 100)
-    const humidity = parseInt(SampleResponse.daily.data[0].humidity * 100)
-    const icon = SampleResponse.daily.data[0].icon
+    const weatherData = {
+      high: parseInt(SampleResponse.daily.data[0].temperatureMax, 10),
+      low: parseInt(SampleResponse.daily.data[0].temperatureMin, 10),
+      wind: parseInt(SampleResponse.daily.data[0].windSpeed, 10),
+      precip: parseInt(SampleResponse.daily.data[0].precipProbability * 100, 10),
+      humidity: parseInt(SampleResponse.daily.data[0].humidity * 100, 10),
+      icon: SampleResponse.daily.data[0].icon,
+    }
 
-    console.log(high, low, wind, precip, icon, humidity)
+
+    console.log(weatherData)
 
     return (
       <div className="widgit-container">
-        <WeatherWidgit high={high} low={low} wind={wind} precip={precip} humidity={humidity} icon={icon}/>
+        <WeatherWidgit {...weatherData} />
       </div>
     )
   }
