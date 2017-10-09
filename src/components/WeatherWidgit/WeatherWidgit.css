@@ -2,7 +2,6 @@
   border-radius: 50%;
   width: 200px;
   height: 200px;
-  background-color: green;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -12,9 +11,9 @@
 
 .inner-circle {
   border-radius: 50%;
-  width: 140px;
-  height: 140px;
-  background-color: #FAFAFA;
+  width: 70%;
+  height: 70%;
+  background-color: #F0F0F0;
   margin: 0 auto;
 }
 

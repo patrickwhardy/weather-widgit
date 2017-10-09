@@ -10,11 +10,21 @@ const setIconPath = icon => {
   }
 }
 
+const calculateOuterHue = temp => {
+  if (temp > 108) {
+    temp = 108
+  } else if (temp < -5) {
+    temp = -5
+  }
+  return 260 - temp * 2.5
+}
+
 const WeatherWidgit = ({ high, low, wind, precip, humidity, icon }) => {
   const iconPath = icon ? setIconPath(icon) : ''
+  const outerHue = calculateOuterHue(high)
 
   return (
-    <div className="outer-circle">
+    <div className="outer-circle" style={{background: `linear-gradient(-45deg, hsl(${outerHue}, 70%, 50%), hsl(${outerHue + 20}, 70%, 50%))`}}>
       <span>{high}°  {low}°</span>
       <div className="inner-circle">
         <ReactSVG
