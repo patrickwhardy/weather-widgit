@@ -2,7 +2,7 @@
 
 let express = require('express')
 let request = require('superagent')
-const config = require('./config')
+const DARK_SKY_KEY = require('./config').DARK_SKY_KEY
 const darkSkyBaseUrl = 'https://api.darksky.net/forecast/'
 const PORT = process.env.PORT || 8080
 
@@ -10,7 +10,7 @@ let app = express()
 
 app.get('/forecast', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  request.get(`${darkSkyBaseUrl}36672273b73cca970772eb1c684952ba/39.976520039,-105.2621530105`).end((err, response) => {
+  request.get(`${darkSkyBaseUrl}${DARK_SKY_KEY}/39.976520039,-105.2621530105`).end((err, response) => {
     res.send(JSON.parse(response.text))
   })
 })

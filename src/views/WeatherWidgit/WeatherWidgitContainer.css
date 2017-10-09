@@ -1,6 +1,7 @@
 .widgit-container {
   height: 350px;
   width: 350px;
-  background-image: url(http://wiki.openstreetmap.org/w/images/thumb/2/25/MapboxOutdoors.jpg/500px-MapboxOutdoors.jpg);
+  align-items: center;
+  flex-direction: column;
   margin: 0 auto;
 }

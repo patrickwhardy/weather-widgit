@@ -4,13 +4,20 @@
   height: 200px;
   background-color: green;
   margin: 0 auto;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .inner-circle {
   border-radius: 50%;
   width: 140px;
   height: 140px;
-  background-color: tan;
+  background-color: #FAFAFA;
   margin: 0 auto;
+}
+
+.weather-icon {
+  margin: 5px;
 }
