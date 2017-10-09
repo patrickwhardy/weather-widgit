@@ -11,12 +11,25 @@
 
 .inner-circle {
   border-radius: 50%;
-  width: 70%;
-  height: 70%;
+  width: 65%;
+  height: 65%;
   background-color: #F0F0F0;
   margin: 0 auto;
 }
 
 .weather-icon {
-  margin: 5px;
+  margin: 7px;
+}
+
+span {
+  padding: 2px 5px;
+  font-size: larger;
+}
+
+.bottom-content {
+  font-size: medium;
+}
+
+.bottom-content-container {
+  margin: -4px 0 13px;
 }

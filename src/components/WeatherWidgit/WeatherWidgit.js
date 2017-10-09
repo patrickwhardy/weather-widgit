@@ -24,15 +24,23 @@ const WeatherWidgit = ({ high, low, wind, precip, humidity, icon }) => {
   const outerHue = calculateOuterHue(high)
 
   return (
-    <div className="outer-circle" style={{background: `linear-gradient(-45deg, hsl(${outerHue}, 70%, 50%), hsl(${outerHue + 20}, 70%, 50%))`}}>
-      <span>{high}°  {low}°</span>
-      <div className="inner-circle">
-        <ReactSVG
-          path={iconPath}
-          className="weather-icon"
-        />
+    <div className="container">
+      <div className="outer-circle" style={{background: `linear-gradient(-45deg, hsl(${outerHue}, 70%, 50%), hsl(${outerHue + 20}, 70%, 50%))`}}>
+        <div className="content">
+          <span>{high}°</span>-
+          <span>{low}°</span>
+        </div>
+        <div className="inner-circle">
+          <ReactSVG
+            path={iconPath}
+            className="weather-icon"
+          />
+        </div>
+        <div className="bottom-content-container">
+          <span className="bottom-content">{wind}mph</span>
+          <span className="bottom-content">precip: {precip}%</span>
+        </div>
       </div>
-      <span>{wind}mph {precip}%</span>
     </div>
   )
 }

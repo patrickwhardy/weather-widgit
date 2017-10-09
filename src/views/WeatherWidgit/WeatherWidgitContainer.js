@@ -25,7 +25,9 @@ class WeatherWidgitContainer extends Component {
 
     return (
       <div className="widgit-container">
-        <WeatherWidgit {...weatherData} />
+        { weatherData.high ?
+          <WeatherWidgit {...weatherData} />
+        : null }
       </div>
     )
   }
