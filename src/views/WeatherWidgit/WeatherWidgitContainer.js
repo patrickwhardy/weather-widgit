@@ -8,6 +8,7 @@ class WeatherWidgitContainer extends Component {
 
   componentDidMount() {
     DarkSkyAPI.getForecast().then((response) => {
+      console.log(response)
       const today = response.daily.data[0]
       this.setState({ weatherData: {
           high: parseInt(today.temperatureMax, 10),
