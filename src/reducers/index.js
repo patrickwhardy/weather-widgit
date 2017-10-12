@@ -1,15 +1,22 @@
 import { combineReducers } from 'redux'
 
+import {
+  CHANGE_SELCTED_FORECAST
+} from '../actions'
+
 
 function forecast (state = {}, action) {
+  console.log('action', action)
   // put 10 day forecase data into object and change index based on day selected
   switch (action.type) {
     case CHANGE_SELCTED_FORECAST :
       const { index } = action
       return {
         ...state,
-      [selectedForecast]: state[index]
+      index: state[index]
       }
+    default :
+      return state
   }
 }
 

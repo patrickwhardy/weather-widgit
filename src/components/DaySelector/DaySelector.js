@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { changeSelectedForecast } from '../../actions'
 import './DaySelector.css'
 
 class DaySelector extends Component {
@@ -13,6 +15,11 @@ class DaySelector extends Component {
     return daysOfWeek.concat(removedDays, daysOfWeek[0])
   }
 
+  updateSelectedDay = (event) => {
+    console.log(event.target.value)
+    changeSelectedForecast({ index: event.target.value })
+  }
+
   componentDidMount () {
     this.setState({ daysOfWeek: this.createWeekFromToday() })
   }
@@ -20,7 +27,7 @@ class DaySelector extends Component {
   render () {
     const { daysOfWeek } = this.state
     return (
-      <select>
+      <select onChange={this.updateSelectedDay}>
         {daysOfWeek.map((day, index) =>
           <option key={`${day}-${index}`} value={index}>{day}</option>
         )}
@@ -29,4 +36,12 @@ class DaySelector extends Component {
   }
 }
 
-export default DaySelector
+function mapDispatchToProps (dispatch) {
+  return {
+    changeForecast: (data) => dispatch(changeSelectedForecast(data))
+  }
+}
+
+export default connect(
+  mapDispatchToProps
+)(DaySelector)

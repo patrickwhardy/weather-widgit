@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import WeatherWidgitContainer from './views/WeatherWidgit/WeatherWidgitContainer'
 import DaySelector from './components/DaySelector/DaySelector'
-import { changeSelectedForecast } from './actions'
-import './App.css';
+import './App.css'
 
 class App extends Component {
   render() {

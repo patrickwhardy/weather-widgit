@@ -27,8 +27,8 @@ const WeatherWidgit = ({ high, low, wind, precip, humidity, icon }) => {
     <div className="container">
       <div className="outer-circle" style={{background: `linear-gradient(-45deg, hsl(${outerHue}, 70%, 50%), hsl(${outerHue + 20}, 70%, 50%))`}}>
         <div className="content">
-          <span>{high}°</span>-
-          <span>{low}°</span>
+          <span>{low}°</span>-
+          <span>{high}°</span>
         </div>
         <div className="inner-circle">
           <ReactSVG
