@@ -1,9 +1,8 @@
 export const CHANGE_SELCTED_FORECAST = 'CHANGE_SELCTED_FORECAST'
 
-export function changeSelectedForecast ({ index }) {
-  console.log('index', index)
+export function changeSelectedForecast ({ forecastIndex }) {
   return {
     type: CHANGE_SELCTED_FORECAST,
-    index,
+    forecastIndex,
   }
 }

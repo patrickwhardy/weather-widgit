@@ -16,8 +16,7 @@ class DaySelector extends Component {
   }
 
   updateSelectedDay = (event) => {
-    console.log(event.target.value)
-    changeSelectedForecast({ index: event.target.value })
+    this.props.changeSelectedForecast({ forecastIndex: event.target.value })
   }
 
   componentDidMount () {
@@ -36,12 +35,13 @@ class DaySelector extends Component {
   }
 }
 
-function mapDispatchToProps (dispatch) {
+const mapStateToProps = (state, props) => {
   return {
-    changeForecast: (data) => dispatch(changeSelectedForecast(data))
+    forecastIndex: state.forecastIndex
   }
 }
 
 export default connect(
-  mapDispatchToProps
+  mapStateToProps,
+  {changeSelectedForecast}
 )(DaySelector)
