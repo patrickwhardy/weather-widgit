@@ -10,7 +10,7 @@ let app = express()
 
 app.get('/forecast', (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
-  request.get(`${darkSkyBaseUrl}${DARK_SKY_KEY}/39.976520039,-105.2621530105`).end((err, response) => {
+  request.get(`${darkSkyBaseUrl}${DARK_SKY_KEY}/${req.query.latitude},${req.query.longitude}`).end((err, response) => {
     res.send(JSON.parse(response.text))
   })
 })

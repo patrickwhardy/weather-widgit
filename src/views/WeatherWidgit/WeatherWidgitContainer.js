@@ -10,12 +10,14 @@ class WeatherWidgitContainer extends Component {
     forecastIndex: 0
   }
 
-  componentDidMount() {
-    DarkSkyAPI.getForecast().then((response) => {
-      this.setState({
-        forecastData: response.daily.data
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location.latitude) {
+      DarkSkyAPI.getForecast(nextProps.location).then((response) => {
+        this.setState({
+          forecastData: response.daily.data
+        })
       })
-    })
+    }
   }
 
   setWeatherData = (index = this.state.forecastIndex) => {
